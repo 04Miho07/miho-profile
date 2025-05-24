@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miho Iwata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --turquoise: #40E0D0;
+      --sunset-orange: #FF7F50;
+      --soft-blue: #87CEEB;
+      --coral: #FF6B6B;
+      --ocean-blue: #1E90FF;
+      --sand: #F4D03F;
+    }
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+      color: #333;
+      min-height: 100vh;
+      position: relative;
+      background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--turquoise) 100%);
+    }
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      z-index: -1;
+    }
+    header {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      backdrop-filter: blur(5px);
+      color: var(--sunset-orange);
+      border-bottom: 3px solid var(--turquoise);
+      position: relative;
+      z-index: 1;
+      font-family: "Yuji Syuku", serif;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(64, 224, 208, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--turquoise), var(--sunset-orange), var(--coral));
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    h2 {
+      color: var(--turquoise);
+      border-bottom: 2px solid var(--sunset-orange);
+      padding-bottom: 0.5rem;
+      margin-top: 0;
+      font-family: "Yuji Syuku", serif;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 2rem auto;
+      display: block;
+      border: 4px solid var(--turquoise);
+      box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);
+    }
+    ul li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    ul li span {
+      position: absolute;
+      left: 0;
+      color: var(--sunset-orange);
+    }
+    strong {
+      color: var(--turquoise);
+    }
+  </style>
+</head>
+<body>
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-tropical-fish-swimming-in-the-ocean-4295-large.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  
+  <header>
+    Miho Iwata
+  </header>
+  
+  <main>
+    <section>
+      <h2>自己紹介</h2>
+      <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&auto=format&fit=crop&q=60" alt="沖縄の風景" class="profile-image">
+      <ul style="list-style-type: none; padding: 0; margin: 2rem 0;">
+        <li>
+          <span>●</span>
+          <strong>名前：</strong> 岩田美穂
+        </li>
+        <li>
+          <span>●</span>
+          <strong>出身：</strong> 福岡県
+        </li>
+        <li>
+          <span>●</span>
+          <strong>趣味：</strong> ネットショッピング
+        </li>
+        <li>
+          <span>●</span>
+          <strong>今したいこと：</strong> 沖縄にのんびり旅行に行きたい
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
